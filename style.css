@@ -1,0 +1,399 @@
+
+/* =========================
+   1. BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dbd7d7;
+    color: #222222;
+    line-height: 1.6;
+}
+
+/* =========================
+   2. NAVIGATION BAR
+========================= */
+
+.navbar {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 18px 8%;
+}
+
+.logo {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   3. MAIN CONTAINER
+========================= */
+
+.container {
+    width: 84%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+/* =========================
+   4. WELCOME SECTION
+========================= */
+
+.top-section {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 25px;
+    align-items: stretch;
+    margin-bottom: 40px;
+}
+
+.welcome {
+    padding: 25px 0;
+}
+
+.small-text {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.welcome h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.welcome h1 span {
+    color: #777777;
+}
+
+.tagline {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   5. COMMON CARDS
+========================= */
+
+.card {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+}
+
+/* =========================
+   6. DAILY MOTIVATION
+========================= */
+
+.motivation {
+    background-color: #222222;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.motivation h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.quote {
+    color: #eeeeee;
+    font-size: 17px;
+    font-style: italic;
+}
+
+.quote-author {
+    color: #aaaaaa;
+    margin-top: 12px;
+    text-align: right;
+}
+
+/* =========================
+   7. SECTION HEADINGS
+========================= */
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2,
+.tips h2,
+.goals h2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.section-heading p,
+.section-subtitle {
+    color: #777777;
+    font-size: 14px;
+}
+
+.section-subtitle {
+    margin-bottom: 20px;
+}
+
+/* =========================
+   8. SUBJECT GRID
+========================= */
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.subject-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    background-color: #ffffff;
+    color: #222222;
+    padding: 22px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    min-width: 0;
+    transition: background-color 0.3s,
+                color 0.3s,
+                transform 0.3s;
+}
+
+.subject-card:hover {
+    background-color: #222222;
+    color: #ffffff;
+    transform: translateY(-4px);
+    z-index: 20;
+}
+
+.subject-number {
+    color: #888888;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.subject-card h3 {
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.subject-card > p {
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 18px;
+}
+
+.subject-card:hover > p {
+    color: #dddddd;
+}
+
+/* =========================
+   9. DROPDOWN BUTTON
+========================= */
+
+.subject-dropdown {
+    width: 100%;
+    margin-top: 12px;
+    position: relative;
+}
+
+.subject-dropdown summary {
+    list-style: none;
+    cursor: pointer;
+    background-color: #eeeeee;
+    color: #222222;
+    padding: 12px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subject-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.subject-dropdown summary::after {
+    content: "+";
+    font-size: 20px;
+}
+
+.subject-dropdown[open] summary::after {
+    content: "-";
+}
+
+/* Dropdown button on card hover */
+.subject-card:hover .subject-dropdown summary {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* =========================
+   10. POPUP MENU
+========================= */
+
+.subject-dropdown ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px;
+    list-style: none;
+    background-color: #ffffff;
+    color: #222222;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    z-index: 1000;
+}
+
+/* Display the popup when opened */
+.subject-dropdown[open] ul {
+    display: block;
+}
+
+/* Popup list items */
+.subject-dropdown li {
+    margin-bottom: 3px;
+}
+
+.subject-dropdown li:last-child {
+    margin-bottom: 0;
+}
+
+/* Topic links */
+.subject-dropdown li a {
+    display: block;
+    padding: 10px;
+    color: #222222 !important;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 5px;
+    overflow-wrap: anywhere;
+}
+
+/* Hover effect on topic links */
+.subject-dropdown li a:hover {
+    background-color: #eeeeee !important;
+    color: #111111 !important;
+}
+
+/* Keep popup readable over a dark subject card */
+.subject-card:hover .subject-dropdown ul {
+    background-color: #ffffff;
+    color: #222222;
+}
+
+.subject-card:hover .subject-dropdown li a {
+    color: #222222 !important;
+    background-color: #ffffff;
+}
+
+.subject-card:hover .subject-dropdown li a:hover {
+    background-color: #eeeeee !important;
+    color: #111111 !important;
+}
+
+/* =========================
+   11. STUDY TIPS AND GOALS
+========================= */
+
+.bottom-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* Study Tips */
+.tips ul {
+    padding-left: 20px;
+}
+
+.tips li {
+    margin-bottom: 12px;
+    color: #444444;
+}
+
+/* =========================
+   12. FOOTER
+========================= */
+
+footer {
+    background-color: #111111;
+    color: #cccccc;
+    text-align: center;
+    padding: 22px;
+    margin-top: 50px;
+    font-size: 13px;
+}
+
+/* =========================
+   13. TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .container {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .top-section,
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome h1 {
+        font-size: 30px;
+    }
+
+    .subjects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================
+   14. MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+
+    .subjects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome h1 {
+        font-size: 27px;
+    }
+
+    .card,
+    .subject-card {
+        padding: 20px;
+    }
+
+    .motivation {
+        padding: 20px;
+    }
+}
