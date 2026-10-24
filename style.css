@@ -331,8 +331,85 @@ body {
     color: #444444;
 }
 
+
 /* =========================
-   12. FOOTER
+   12. WEEKLY TIMETABLE
+========================= */
+
+.timetable-section {
+    margin-top: 40px;
+}
+
+.timetable-card {
+    background-color: #ffffff;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+}
+
+.timetable-scroll {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 6px;
+}
+
+.weekly-timetable {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    color: #222222;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.weekly-timetable th,
+.weekly-timetable td {
+    border: 1px solid #d2d2d2;
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.weekly-timetable thead th {
+    background-color: #222222;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.weekly-timetable tbody th {
+    background-color: #f1f1f1;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.weekly-timetable tbody tr:not(.break-row):hover td {
+    background-color: #f7f7f7;
+}
+
+.weekly-timetable .break-row th {
+    background-color: #e8e8e8;
+    color: #333333;
+    padding: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.weekly-timetable tfoot td {
+    background-color: #111111;
+    color: #cccccc;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* =========================
+   13. FOOTER
+========================= */
+
 ========================= */
 
 footer {
@@ -345,7 +422,7 @@ footer {
 }
 
 /* =========================
-   13. TABLET RESPONSIVE
+   14. TABLET RESPONSIVE
 ========================= */
 
 @media (max-width: 768px) {
@@ -374,7 +451,7 @@ footer {
 }
 
 /* =========================
-   14. MOBILE RESPONSIVE
+   15. MOBILE RESPONSIVE
 ========================= */
 
 @media (max-width: 480px) {
